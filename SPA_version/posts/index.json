@@ -1,0 +1,87 @@
+[
+    {
+        "post": "Y-U-No-Become-Entrepreneur",
+        "tags": ["Talks", "Entrepreneurship", "Motivational", "My Story"],
+        "added_on": "10 March, 2017",
+        "snippet": "Recently, I gave a talk to a class of engineering students at Universidad Adolfo Ibanez in Santiago, Chile. It was a general talk about entrepreneurship. Here is the transcript of the talk along with the relevant slides..."
+    },
+    {
+        "post": "The real case for AI powered bots",
+        "tags": ["Bots", "Artificial Intelligence", "Product Design", "User Experience"],
+        "added_on": "27 September, 2016",
+        "snippet": "Conversational User Interfaces (CUIs) backed by machine learning algorithms with a sprinkling of Natural Language Processing (NLP) also known famously as bots are all the rage these days. Every app wants to be one. Every developer aspires to write one. Will every user be happy to use one? more importantly, <b>will YOUR user be happy to use one?</b> Now, that's the 1,000,000$ question....",
+        "external_link": "https://blog.16metrics.com/the-real-case-for-ai-powered-bots-57b3dbba9747"
+    },
+    {
+        "post": "Building-a-single-page-application-with-vanilla-js",
+        "tags": ["No framework SPA", "SPA using plain javascript", "hash based routing"],
+        "added_on": "7 December, 2015",
+        "snippet": "Often times I've come across this framework vs that framework debate. Many times as an observer, some times as a participant and occasionally as the person who <i>cough</i> started the debate <i>cough</i>. Most frequent arguments in these debates are around the comparitively easy ways to do stuff_ or the lesser code needs to be written points. What I don't see people talking about is writing vanilla js and structuring your project better instead of using a framework...."
+    },
+    {
+        "post": "What-does-it-mean-to-be-an-Engineering-Manager",
+        "tags": ["Engineering Management", "Software Development Manager", "Learnings as an EM"],
+        "added_on": "22 April, 2015",
+        "snippet": "I keep trying to remember who asked me this but my otherwise resilient memory is failing me here. But, it did set me thinking, so much so that I immediately made notes. I kept looking at this list whenever I got bored in meetings and it is now in a shape to go up here..."
+    },
+    {
+        "post": "40,000+-Users-in-3-months...-Story-of-a-Product-I-built",
+        "tags": ["Date or Hate", "My Pet Project", "Entrepreneurship", "Building a consumer product"],
+        "added_on": "23 August, 2014",
+        "snippet": "It's been some time since I wrote something here. 8 months almost. No excuses!! Well, it's time to indulge in another retrospection. Here is the story of the time when myself and Poornima built a product from ground up and then sadly had to shut it down roughly after 3 months from the time we got our first user..."
+    },
+    {
+        "post": "Converting-Nested-JSON-to-CSV",
+        "tags": ["JSON", "CSV", "JSON to CSV", "Nested JSON to CSV", "N level JSON to CSV"],
+        "added_on": "8 December, 2013",
+        "snippet": "The first time I came across JSON, I was really happy. It is a very light and fluffy object representation in plain text. The beauty was that there were no new or extra specs; existing concepts of lists, objects, strings, numbers etc. were taken and put together in it's own clean way. I use JSON widely when I am working with APIs. In my playbook it is second only to single word/number replies..."
+    },
+    {
+        "post": "Engineering-Interview-Questions",
+        "tags": ["Engineering interviews", "Interview tips", "how to prepare for an interview", "tech interview questions"],
+        "added_on": "12 August, 2013",
+        "snippet": "Hiring the right talent is a considerably big part of the job that I do. Easier said than done, trust me!! Anyways, I've found the formula to get the best of the best engineers for my team. Whoever scores highest when the following formula is applied is usually my first choice..."
+    },
+    {
+        "post": "Blast-From-The-Past",
+        "tags": ["Friends", "Photos from college days"],
+        "added_on": "11 June, 2013",
+        "snippet": "It had been a while since I had visited Facebook... I swear!! I found some interesting pictures posted by one close friend of mine, Ashwani. Stole them and am re posting it here..."
+    },
+    {
+        "post": "The-Way-We-Work",
+        "tags": ["Entrepreneurship to Employment", "Tech life @ Common Floor", "Product company experience", "CommonFloor.com"],
+        "added_on": "10 March, 2013",
+        "snippet": "It's been 6 months since I joined CommonFloor.com (CF), a real estate portal largely dedicated to apartments and gated communities. It is time that I wrote about the culture & work environment here..."
+    },
+    {
+        "post": "Viewing-Hidden-Data-Within-Images",
+        "tags": ["Exif Data", "Image header data", "hidden data", "image properties", "image meta data"],
+        "added_on": "10 November, 2012",
+        "snippet": "Recently I had a requirement to extract location data from an image into which geo code was embedded. In the course of completing this task I wrote a small script that will extract all the exif data from the image. You can extract meaningful information out of JPEG or TIFF images..."
+    },
+    {
+        "post": "Bad-code-is-a-lot-like-bad-driving",
+        "tags": ["anti patterns", "bad coding practices"],
+        "added_on": "28 October, 2012",
+        "snippet": "Recently I had the chance to sit in the front seat of a bus while traveling from Goa to Bangalore. Due to oversleeping during the day I sat up and started staring outside the windshield watching all the things passing by..."
+    },
+    {
+        "post": "Scoring-8.5-in-IELTS-Academic",
+        "tags": ["IELTS", "Tips for scoring high in IELTS", "Band 8.5", "IELTS Preparation", "IELTS Academic"],
+        "added_on": "14 October, 2012",
+        "snippet": "\"IELTS is the world's proven English test. More people go more places with IELTS....\". This is what they tell about IELTS exam on their web site www.ielts.org. A little less pompous, neutral and community edited information about the IELTS exam can be found on wikipedia..."
+    },
+    {
+        "post": "Work---Life-balance-The-eternal-conundrum-of-an-IT-employee",
+        "tags": ["work life balance", "work load", "work stress", "work & private life"],
+        "added_on": "7 October, 2012",
+        "snippet": "\"There is no secret ingredient\" from Kung Fu Panda1 is what immediately pops to my mind when I start thinking about this. What is that one thing I can do to achieve this?? What is it that will allow me to spend a little more quality time with my family?? There exists many answers but not one that works in its entirety..."
+    },
+    {
+        "post": "About-Me",
+        "tags": ["About"],
+        "added_on": "10 September, 2012",
+        "snippet": ""
+    }
+]

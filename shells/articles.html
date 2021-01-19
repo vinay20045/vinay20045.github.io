@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0">
+
+        <link rel="shortcut icon" href="images/v_icon.png">
+        
+        <title>Thoughts and Articles by Vinay NP</title>
+        <meta name="description" content="I write about leadership, sofware engineering, system design, product development and related topics">
+
+        <meta property="og:title" content="Thoughts and Articles by Vinay NP">
+        <meta property="og:description" content="I write about leadership, sofware engineering, system design, product development and related topics">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://askVinay.com/articles.html">
+        <meta property="og:image" content="https://askvinay.com/images/profile_pic.jpg">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="container post-container">
+            <div class="header">
+                $${apply_partial(main_header)}
+            </div>
+
+            <div class="main-content">
+                <h2>Published Posts</h2>
+                Here you can find all my published posts. I write about leadership, sofware engineering, system design, product development and related topics. I also occasionally post pictures and write about personal experiences outside of work.
+                <div>
+                    <ul id="all_posts"></ul>
+                </div>
+            </div>
+
+            <div class="footer">
+                $${apply_partial(main_footer)}
+            </div>
+        </div>
+
+        <script src="js/articles_index.js"></script>
+        <script src="js/menu_highlighter.js"></script>
+        <script>
+            mh_highlight_menu('thoughts')
+        </script>
+    </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0">
+        <title>Building A Single Page Application With Vanilla Js 7 December 2015 - Vinay NP</title>
+        <meta name="description" content="Building a single page application with vanilla js">
+
+        <link rel="shortcut icon" href="../images/v_icon.png">
+
+        <meta property="og:title" content="Building A Single Page Application With Vanilla Js 7 December 2015 - Vinay NP">
+        <meta property="og:description" content="Building a single page application with vanilla js">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://askVinay.com/post/building-a-single-page-application-with-vanilla-js-7-december-2015.html">
+
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <div class="container post-container">
+            <div class="header">
+                <div class="header-content">
+    <a href="../index.html"><img src="../images/profile_pic.jpg"></a>
+    <a href="../index.html" class="no-highlight no-decoration">About</a>
+    <a href="../articles.html" class="menu-item-thoughts no-highlight no-decoration">Thoughts</a>
+    <a href="https://github.com/vinay20045?tab=repositories&q=&type=source" class="no-highlight no-decoration" target="_BLANK">Projects</a>
+    <a href="../Vinay_NP_Resume.html" class="no-highlight no-decoration header-last" target="_BLANK">Resume</a>
+</div>
+            </div>
+
+            <div class="main-content">
+                <h2>Building a single page application with vanilla js</h2>
+<h5>Last Updated: 10 January, 2021 | First Published: 7 December, 2015</h5>
+<p>Often times I've come across <em>this framework vs that framework</em> debate. Many times as an observer, some times as a participant and occasionally as the person who <em>*cough*</em>  started the debate <em>*cough*</em>. Most frequent arguments in these debates are around the <em>comparatively easy ways to do stuff</em> or the <em>lesser code needs to be written</em> points. What I don't see people talking about is writing vanilla js, using scores of built in APIs and structuring your project better instead of using a framework. </p>
+<p>A lot of good folks have talked about this in the past. Some of my favorite reads are <a href="http://bitworking.org/news/2014/05/zero_framework_manifesto" title="by Joe Gregorio">zero framework manifesto</a> and <a href="http://codeofrob.com/entries/look-ma,-no-frameworks.html" title="by Rob Ashton">Look ma, no frameworks</a>. Many of these frameworks have a wonderful way of marketing themselves by presenting their top features or perceived benefits of usage on their websites or through developer's blogs, however, I don't see as many folks showing ways of building SPA with vanilla js. I therefore decided to re-factor my personal website as a SPA without using any framework. I hope that this post will serve as a good first step when you are building an app on your own without using any frameworks. All code referenced here is available at my <a href="https://github.com/vinay20045/vinay20045.github.io/tree/master/SPA_version" title="My website's repo">github repo</a>. <del>and this website itself acts as a live demo</del> I've built a static site generator and using this site to experiment it out. Will post more details soon.</p>
+<p><strong>Design</strong> <br />
+Prior to refactoring my website was a typical blog written in PHP. Every page request used to do a round trip to a server for all html content and assets, it had a management console etc. During refactoring some of my considerations were...</p>
+<ul>
+<li>No page loads for every post i.e. it should be an SPA</li>
+<li>Posts to be written using markdown syntax</li>
+<li>The blog should be written only in HTML+CSS+JS</li>
+<li>Hosting to be done on github pages or AWS S3</li>
+<li>It had to be mobile friendly</li>
+</ul>
+<p>with these things in mind, the high level design of the blog looks like this... <br />
+<img alt="askvinay.com SPA design" src="../uploads/vanilla-js-spa-design.png" /></p>
+<p><strong>Basic Structure</strong> <br />
+One of the primary things to look at while developing any application is the organization of the code. This includes everything right from your folder structure and naming conventions to declarations and definitions. Once you do this for one project, it sort of acts like a boilerplate and will be very easy to replicate and extend for your future projects. </p>
+<p>The basic structure of the blog application looks like this...</p>
+<pre><code>|-- assets
+|   |-- css &lt;-- All site styles go here
+|   |-- images &lt;-- All images used in the templates or page shell go here
+|   `-- js
+|       |-- config.js &lt;-- Environment specific config file
+|       |-- init.js &lt;-- Contains all instructions on load
+|       |-- controllers &lt;-- Business logic and view manipulation functions
+|       |-- templates &lt;-- context based reusable snippets of HTML
+|       |-- utils &lt;-- All internal and 3rd party libraries
+|       `-- views &lt;-- Views exposed to the user
+|-- index.html &lt;-- Page shell. Acts like a container. Actual content is populated based on route
+|-- posts &lt;-- All posts markdown files go here
+`-- uploads &lt;-- All assets used in posts go here
+</code></pre>
+<p><strong>Routing</strong> <br />
+It becomes very important to have proper routing in place to facilitate deep linking, book marking and better SEO. Many techniques can be used for routing but hash based routing works really well and is easy to implement. On load of the application a routing function is registered against the hashchange event.</p>
+<p>The routing function, part of <a href="https://github.com/vinay20045/vinay20045.github.io/blob/master/SPA_version/assets/js/utils/utils.js" title="Utils lib">utils library</a>, looks like this...</p>
+<pre><code>router: function(route, data){
+    route = route || location.hash.slice(1) || 'home';
+
+    var temp = route.split('?');
+    var route_split = temp.length;
+    var function_to_invoke = temp[0] || false;
+
+    if(route_split &gt; 1){
+        var params  = extract_params(temp[1]);
+    }
+
+    //fire away...
+    if(function_to_invoke){
+        views[function_to_invoke](data, params);
+    }
+}
+</code></pre>
+<p>extract_params function looks like this...</p>
+<pre><code>var extract_params = function(params_string){
+    var params = {};
+    var raw_params = params_string.split('&amp;');
+
+    var j = 0;
+    for(var i = raw_params.length - 1; i &gt;= 0; i--){
+        var url_params = raw_params[i].split('=');
+        if(url_params.length == 2){
+            params[url_params[0]] = url_params[1];
+        }
+        else if(url_params.length == 1){
+            params[j] = url_params[0];
+            j += 1;
+        }
+        else{
+            //param not readable. pass.
+        }
+    }
+
+    return params;
+};
+</code></pre>
+<p>The event listener is registered in init.js...</p>
+<pre><code>window.addEventListener(
+    "hashchange", 
+    function(){utils.router()}  // the router is part of the utils library
+);
+</code></pre>
+<p><strong>Dissecting controllers</strong> <br />
+Controllers hold the business logic. You can use the functions in here to manipulate your views. These functions are not exposed to the user directly. They can access only templates and the libraries available in utils. They can be invoked by a view or another controller.</p>
+<p>The controller taking care of the home page looks like this...</p>
+<pre><code>controllers.home_page = function(data, params){
+    var all_posts = JSON.parse(data);
+
+    var posts_to_show = 3;
+    var template_context = [];
+    for (var i = 0; i &lt; posts_to_show; i++){
+        var post = all_posts[i];
+        var item = {
+            'link': '#post?'+post.post,
+            'title': post.post.replace(/-/g, ' '),
+            'snippet': post.snippet,
+            'published_on': post.added_on,
+        };
+        template_context.push(item);
+    }
+
+    //get recent posts
+    var recent_posts = templates.recent_posts(template_context);
+
+    //get hello text
+    var hello_text = templates.hello_text();
+
+    var final_content = hello_text + recent_posts;
+    utils.render(
+        'page-content',
+        final_content
+    );    
+};
+</code></pre>
+<p><strong>Dissecting templates</strong> <br />
+Templates hold HTML markup for the actual page content. It helps in re-usability when you can have functions generating the HTML you want based on some context passed. All functionality for the templates have to be provided by the controller invoking it by using data binding and event registration techniques. The only exception that I've allowed are the hrefs. </p>
+<p>The template for the hello section of the home page is...</p>
+<pre><code>templates.hello_text = function(data){
+    var content = `
+        &lt;div id="hello_text"&gt;
+            &lt;h2&gt;Hello...&lt;/h2&gt;
+            &lt;img src="assets/images/profile_pic.jpg" align="left" style="width:70px;"&gt;
+            &lt;p&gt;
+                Thank you for visiting my blog. I am Vinay Kumar NP. I am a passionate techie...
+            &lt;/p&gt;
+            &lt;p&gt;
+                I am currently working on a &lt;a href="http://www.int.ai/" target = "_BLANK"&gt;startup&lt;/a&gt; of my own. I have previously worked in various engineering leadership positions at...
+            &lt;/p&gt;
+        &lt;/div&gt;
+    `;
+
+    return content;
+};
+</code></pre>
+<p><strong>Dissecting views</strong> <br />
+Views are the functions that are directly exposed to user. i.e. they are invoked by the router and are part of the url. There is no other difference between view functions and controllers. You could expose controllers too, but that might hurt modularity.</p>
+<p>The view for all posts page looks like this. It simply passes the request to load show_posts controller after making an ajax call to get the posts index file.</p>
+<pre><code>views.all_posts = function(data, params){
+    var api_stub = 'posts/index.json';
+
+    utils.request(
+        api_stub,
+        'show_all_posts',
+        'show_all_posts_error'
+    );
+};
+</code></pre>
+<p><strong>Making API Requests</strong> <br />
+This is the holy grail of any SPA. Though my blog does not need a mechanism to make outside api calls as all my posts are hosted within, I've written it to illustrate the concept. The request method takes the api stub, call back functions, params and fires the request. This is also part of the <a href="https://github.com/vinay20045/vinay20045.github.io/blob/master/SPA_version/assets/js/utils/utils.js" title="Utils lib">utils library</a>. (Please be careful of CORS here).</p>
+<p>The function to make api calls looks like this...</p>
+<pre><code>request: function(api_stub, success_callback, error_callback, callback_params){
+    api_stub = api_stub || '';
+    callback_params = callback_params || {};
+
+    controllers.show_loader('page-content');
+
+    var url = config.api_server + api_stub;
+
+    var x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+        if (x.readyState == XMLHttpRequest.DONE) {
+            if(x.status == 200){
+                controllers[success_callback](
+                    x.responseText, 
+                    callback_params
+                );
+            }
+            else{
+                controllers[error_callback](
+                    x.status, 
+                    callback_params
+                );
+            }
+        }
+    };
+    //other methods can be implemented here
+    x.open('GET', url, true);
+    x.send();
+}
+</code></pre>
+<p>I haven't gotten a chance to do a comparative bench marking but at first glance all my repaints are done very fast with little or no jank. For the question of too many network calls on first load, I am planning to build a python based site packager for one of my other projects, I will post it once done.</p>
+<p>I've tested the code on all modern browsers (except IE) and it seems to work without any glitches. Watch out for JS api compatibility while building your own applications (For ex, I've used back ticks which are not compatible with older browsers). </p>
+<p>Let me know if you find any bugs or issues with the code.</p>
+            </div>
+
+            <div class="footer">
+                <table class="transparent-table">
+    <tr>
+        <td class="text-align-left">
+            <a href="https://github.com/vinay20045" target="_BLANK"><img src="../images/github_icon.png" class="footer-icon" alt="Vinay NP on Github"></a>
+            <a href="https://twitter.com/vinay20045" target="_BLANK"><img src="../images/twitter_icon.png" class="footer-icon" alt="Vinay NP on Twitter"></a>
+            <a href="https://www.linkedin.com/in/vinay20045" target="_BLANK"><img src="../images/linkedin_icon.png" class="footer-icon footer-icon-last" alt="Vinay NP on Linkedin"></a>
+        </td>
+        <td class="hide-on-mobile">&nbsp;</td>
+        <td class="text-align-right">
+            <span class="footer-text">&copy; 2021 <a href="mailto:vinay@askvinay.com" class="no-highlight">Vinay Kumar NP</a></span>
+        </td>
+    </tr>
+</table>
+            </div>
+        </div>
+
+        <script src="../js/menu_highlighter.js"></script>
+        <script>
+            mh_highlight_menu('thoughts')
+        </script>
+    </body>
+</html>

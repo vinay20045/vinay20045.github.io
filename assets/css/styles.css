@@ -1,0 +1,367 @@
+/*
+    font-color-dark: #555;
+    font-color-dark-strong: #333;
+    font-color-light: #fff;
+*/
+
+@media 
+only screen and (max-width: 760px){
+    table, thead, tbody, th, td, tr, colgroup, col{ 
+        display: block; 
+    }
+
+    td{ 
+        border: none;
+        border-bottom: 0px solid #eee; 
+        position: relative;
+    }
+
+    h2{
+        padding-top: 0 !important;
+    }
+
+    .hide-on-mobile{
+        display: none !important;
+    }
+    .show-on-mobile{
+        display: block !important;
+    }
+
+    .home-image{
+        padding: 0px !important;
+    }
+
+    .home-button{
+        margin-right: 0px !important;
+    }
+
+    .main-content{
+        padding-bottom: 120px !important;
+    }
+
+    .footer .text-align-left,
+    .footer .text-align-right{
+        text-align: center !important;
+    }
+
+    .header{
+        text-align: left !important;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .header-content{
+        width: 500px;
+    }
+}
+
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    --font-color-primary: #495057;
+    --font-color-secondary: #717171;
+    --font-color-highlight: #343a40;
+    --font-color-link: #f2461c;
+    --font-color-light: #ffffff;
+
+    --bg-color-primary: #fff;
+    --bg-color-highlight: #f5f7f9;
+    
+    --border-color-primary: #d8dee9;
+    --border-color-secondary: #69c;
+
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 15px; 
+    line-height: 1.75;
+    color: var(--font-color-primary);
+    background-color: var(--bg-color-primary);
+}
+
+a{
+    color: var(--font-color-link);
+}
+.no-highlight{
+    color: var(--font-color-primary);
+}
+.no-highlight:hover{
+    color: var(--font-color-link);
+}
+.no-decoration{
+    text-decoration: none;
+}
+a:active, 
+a:focus,
+a:hover{
+    text-decoration: underline;
+    outline: none;
+}
+
+h1,
+h2,
+strong{
+  color: var(--font-color-highlight);
+}
+
+h2{
+    margin-top: 1em;
+    padding-top: 1em;
+}
+.light-padding{
+    margin-top: 0em;
+    padding-top: 0em;
+}
+
+h5{
+    margin: 0;
+    padding-bottom: 20px;
+    font-weight: inherit;
+    color: var(--font-color-secondary);
+}
+.resume-table h5{
+    padding-bottom: 0px;
+}
+
+code{
+    display: block;
+    overflow: scroll;
+    background: var(--bg-color-highlight);
+    padding: 2px 4px;
+    color: var(--font-color-secondary);
+}
+
+pre{
+    background: var(--bg-color-highlight);
+    padding: 1em;
+    color: var(--font-color-secondary);
+    border-left: 2px solid var(--border-color-secondary);
+    border-bottom: 1px solid var(--border-color-primary);
+}
+
+p{
+    padding-bottom: 10px;
+}
+.resume-table p{
+    padding: 0;
+    margin: 10px 0px 10px 20px;
+}
+
+.show-on-mobile{
+    display: none;  
+}
+
+.text-align-center{
+    text-align: center;
+}
+.text-align-right{
+    text-align: right;
+}
+.text-align-left{
+    text-align: left;
+}
+
+.no-margin-left{
+    margin-left: 0px !important;
+}
+
+.container{
+    position: relative;
+    min-height: 100%;
+    margin: auto;
+    max-width: 850px;
+    padding: 0px 20px;
+}
+.post-container{
+    max-width: 725px !important;
+}
+.post-container h2{
+    margin-bottom: 10px;
+}
+
+.main-content{
+    text-align: left;
+    padding-bottom: 45px;
+}
+.main-content img{
+    width: 100%;
+}
+
+.transparent-table{
+    width: 100%;
+    border: 0px solid #000000;
+    border-collapse: collapse;
+}
+
+.home-image{
+    border-radius: 50%;
+    width: 125px !important;
+    padding-right: 10px;
+}
+
+.home-button{
+    display: inline;
+    color: var(--font-color-primary);
+    background-color: #fff;
+    border: 1px solid var(--font-color-link);
+    padding: 5px 20px;
+    margin-right: 25px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.home-button:active,
+.home-button:focus,
+.home-button:hover{
+    background-color: var(--font-color-link);
+    color: #fff;
+    text-decoration: none !important;
+}
+.home-button-last{
+    margin-right: 0px !important;
+}
+
+.header{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: right;
+    text-transform: uppercase;
+    color: var(--font-color-secondary);
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+}
+.header a{
+    padding-right: 20px;
+}
+.header-last{
+    padding-right: 0px !important;
+}
+.header img{
+    float: left;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    padding: 10px 0px 0px 0px;
+}
+.footer-icon{
+    width: 24px;
+    padding-right: 10px;
+}
+.footer-icon-last{
+    padding-right: 0px;
+}
+.footer-text{
+    font-size: 12px;
+}
+
+#all_posts{
+    text-transform: capitalize;
+}
+#all_posts li{
+    margin: 0 0 10px 0;
+}
+
+.resume-table{
+    table-layout: fixed;
+    width: 100%;
+    border: 5px solid #f2f2f2;
+    border-collapse: collapse;
+}
+.resume-table a{
+    color: #337ab7 !important;
+}
+
+.resume-col-left{
+    width: 30%;
+    background-color: #f2f2f2;
+}
+.resume-col-right{
+    width: 70%;
+}
+
+.resume-td-left{
+    text-align: center;
+    vertical-align: top;
+    padding: 30px 10px 0 10px;
+    
+}
+.resume-td-left img{
+    border-radius: 10px !important;
+    border: 5px solid #ffffff;
+    padding-right: 0px;
+}
+
+.resume-td-right{
+    text-align: justify;
+    vertical-align: top;
+    padding: 30px 20px 0 20px;
+}
+
+.resume-heading{
+    padding: 20px 0px 0px 0px;
+    font-size: 18pt;
+    font-weight: 300;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.resume-detail{
+    padding: 15px 0px 15px 0px;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.resume-icon{
+    width: 20px !important;
+    border: 0px !important;
+    padding-right: 10px !important;
+    vertical-align: middle;
+}
+.resume-preview{
+    height: 100% !important;
+    width: 60px !important;
+    border: 0px !important;
+    padding-right: 10px !important;
+    vertical-align: middle;
+    float: left;
+    border-top-left-radius: 5px;
+}
+
+.resume-location{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.resume-ul{
+    padding: 0 0 0 20px;
+    margin-top: 0px;
+}
+
+.resume-showcase{
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+}
+.resume-showcase a:hover{
+    text-decoration: none !important;
+}
+

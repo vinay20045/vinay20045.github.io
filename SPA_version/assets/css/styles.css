@@ -1,0 +1,181 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,300italic,400italic,600italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: #f2f2f2;
+    color: #6b6b6b;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    word-spacing: 3px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+b{
+    font-weight: 700;
+}
+
+.resume{
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    background-color: #ffffff;
+}
+
+.center-text{
+    text-align: center;
+}
+
+#resume-left-col{
+    background-color: #f2f2f2 !important;
+}
+
+.resume-row{
+    border: 1px solid #f2f2f2;
+}
+
+.resume-photo{
+    padding-top: 20px;
+}
+
+.resume-photo img{
+    border: 5px solid #ffffff;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+}
+
+.resume-name{
+    padding-top: 10px;
+    font-size: 18pt;
+    font-weight: 600;
+}
+
+.resume-title{
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+.resume-job-title{
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+.resume-details-col{
+    padding-top: 15px;
+    text-align: justify;
+}
+
+#resume-details-left-1 i{
+    padding:0px;
+    font-size: 14pt;
+}
+#resume-details-right-1 table tr td,
+#resume-details-left-1 table tr td{
+    border: none;
+    font-size: 14px;
+}
+
+.resume-section-heading{
+    font-size: 18pt;
+    font-weight: 300;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: right;
+}
+
+.container{
+    position: relative;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.main-content{
+    padding: 20px;
+    padding-bottom: 170px;
+}
+
+.main-content img{
+    width: 100%;
+    padding-right: 10px;
+}
+
+.main-content pre{
+    white-space: pre-wrap;
+}
+
+.main-content i{
+    font-size: 12px;
+}
+
+pre{
+    display: block;
+    background-color: #f7f7f7;
+    padding: 10px;
+}
+
+h1{
+    border-bottom: 1px solid #c2c2c2;
+    text-align: left;
+}
+
+h2{
+    border-bottom: 1px solid #c2c2c2;   
+}
+
+h3{
+    margin-bottom:0px;
+    font-weight: 600;
+}
+
+p{
+    padding-bottom: 10px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    width: 100%;
+    height: 150px;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    color: #c2c2c2;
+    border-top: 4px solid #f2f2f2;
+    font-size: 12px;
+}
+
+.footer a{
+    padding: 10px;
+    color: #c2c2c2;
+}
+
+.footer img{
+    padding-top: 10px;
+}
+
+.footer-icons img{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#hello_text{
+    padding-bottom: 10px;
+}
+
+.ul-no-style{
+    list-style-type: none;
+}

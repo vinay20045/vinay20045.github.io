@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0">
+        <title>$${prettify(_file_name_)} - Vinay NP</title>
+        <meta name="description" content="$${get_first_line(_body_md_)}">
+
+        <link rel="shortcut icon" href="../images/v_icon.png">
+
+        <meta property="og:title" content="$${prettify(_file_name_)} - Vinay NP">
+        <meta property="og:description" content="$${get_first_line(_body_md_)}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://askVinay.com/post/$${slugify(_file_name_)}.html">
+
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <div class="container post-container">
+            <div class="header">
+                $${apply_partial(nested_header)}
+            </div>
+
+            <div class="main-content">
+                $${_body_html_}
+            </div>
+
+            <div class="footer">
+                $${apply_partial(nested_footer)}
+            </div>
+        </div>
+
+        <script src="../js/menu_highlighter.js"></script>
+        <script>
+            mh_highlight_menu('thoughts')
+        </script>
+    </body>
+</html>
