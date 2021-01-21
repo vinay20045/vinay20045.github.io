@@ -18,7 +18,6 @@ CSV = '.csv'
 JSON = '.json'
 MD = '.md'
 PARSE_FUNC = 'parse_'
-PARTIALS_FUNC = 'apply_partial'
 
 ALL_DATASETS = {}
 ALL_PARTIALS = {}
