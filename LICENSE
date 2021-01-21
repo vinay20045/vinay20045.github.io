@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2017 Vinay NP <vinay@askvinay.com>
+Copyright (c) 2021 Vinay NP <vinay@askvinay.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,13 @@ SOFTWARE.
 
 ==========
 
-Font Awesome (assets/css/font-awesome.min.css)
+Font Awesome (SPA_version/assets/css/font-awesome.min.css)
 ------------
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
 ==========
 
-Bootstrap (assets/css/bootstrap.min.js, assets/js/utils/bootstrap.min.js)
+Bootstrap (SPA_version/assets/css/bootstrap.min.js, assets/js/utils/bootstrap.min.js)
 ---------
 The MIT License (MIT)
 
@@ -55,7 +55,7 @@ THE SOFTWARE.
 
 ==========
 
-Showdown (assets/js/utils/showdown.min.js)
+Showdown (SPA_version/assets/js/utils/showdown.min.js)
 --------
 Showdown Copyright (c) 2007, John Fraser
 <http://www.attacklab.net/>
@@ -94,7 +94,7 @@ software, even if advised of the possibility of such damage.
 
 ==========
 
-Jquery (assets/js/utils/jquery.js)
+Jquery (SPA_version/assets/js/utils/jquery.js)
 ------
 Copyright JS Foundation and other contributors, https://js.foundation/
 
