@@ -32,10 +32,16 @@ def parse_md(file_path, file_contents):
     file_name = os.path.split(file_path)[1]
     file_name = os.path.splitext(file_name)[0]
 
-    #for match in re.finditer('\[\$\$\{(\w*)\}\]\:', shell_contents):
+    #custom file name decoding specific to this site
+    custom_name = file_name.split('-')
+    custom_name.pop() #removing year
+    custom_name.pop() #removing month
+    custom_name.pop() #removing date
+    custom_name = '-'.join(custom_name)
     
     dataset = [{
         '_file_name_': file_name,
+        '_file_name_custom_': custom_name,
         '_body_md_': file_contents,
         '_body_html_': html_body
     }]
